@@ -59,6 +59,17 @@ void HandleEvents()
             graph.ChangeSize(-1);
             break;
         }
+        if (window_event.type == SDL_KEYUP && window_event.key.keysym.scancode == SDL_SCANCODE_KP_7)
+        {
+            graph.Change_Show_Points();
+            break;
+        }
+        if (window_event.type == SDL_KEYUP && window_event.key.keysym.scancode == SDL_SCANCODE_KP_0)
+        {
+            RM().ClearPoints();
+            file.Read_Data_From_File(RM().GetPoints());
+            break;
+        }
         if (window_event.type == SDL_MOUSEBUTTONUP && window_event.button.button == SDL_BUTTON_LEFT)
         {
             int button = RM().GetMenu()->Clicked(*app->GetMouseX(), *app->GetMouseY());

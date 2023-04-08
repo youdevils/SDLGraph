@@ -22,7 +22,7 @@ void DataFile::Read_Data_From_File(std::vector<std::shared_ptr<Point>> &array)
 
     float x = 0.0f;
     float y = 0.0f;
-    in >> x >> y;
+    // in >> x >> y;
     while (in.good() && !in.eof())
     {
         in >> x >> y;
